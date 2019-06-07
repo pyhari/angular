@@ -1,0 +1,70 @@
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voicemail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+  <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+         Copy Policy
+        </ng-template>
+        <h1>eCLIQ Copy Policy</h1>
+        <form class="example-form">
+          <div>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Acccount Number" >
+            </mat-form-field>
+           
+              </div>
+              <div>
+                  <mat-form-field>
+                <mat-label>Select  Source</mat-label>
+                <mat-select [(value)]="selected">
+                  
+                  <mat-option value="option1">STG</mat-option>
+                  <mat-option value="option2">TST</mat-option>
+                  <mat-option value="option3" >DEV</mat-option>
+                  <mat-option value="option3">PRD</mat-option>
+                </mat-select>
+              </mat-form-field>
+              </div>
+            
+                <div> 
+                    <mat-form-field>
+                <mat-label>Select Target</mat-label>
+                <mat-select [(value)]="selected">
+                  
+                  <mat-option value="option1">STG</mat-option>
+                  <mat-option value="option2">TST</mat-option>
+                  <mat-option value="option3">DEV</mat-option>
+                  <mat-option value="option3">TDS</mat-option>
+                </mat-select>
+                </mat-form-field>
+              </div>
+                
+          
+        
+          </form>
+          <button mat-raised-button color="primary"  matTooltip="Clik to submit Policy Copiy"
+          >Copy</button>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          Size Policy
+        </ng-template>
+        <h1>eCLIQ Size Policy</h1>
+        <mat-spinner></mat-spinner>
+      </mat-tab>
+    </mat-tab-group>
+  
+    <p>You selected: {{selected}}</p>
+  
